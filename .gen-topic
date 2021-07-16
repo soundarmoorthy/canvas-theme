@@ -22,7 +22,7 @@ fi
 
 read -p 'Enter the name of the topic :' topic_name
 
-if [ -z $topic_name ]; then
+if [ -z "$topic_name" ]; then
     echo "Topic name cannot be empty"
     exit -3;
 fi
@@ -32,10 +32,21 @@ file_name=$dest_dir/index.md
 touch $file_name
 echo "---"                 >> $file_name
 echo "title: $topic_name"  >> $file_name
-echo "section: index" >> $file_name
+echo "section: $topic_dir" >> $file_name
 echo "---"                 >> $file_name
 echo "{% include index_page.html %}" >> $file_name
 
-echo "Topic created succesfully. To add content under the topic go to the folder $dest_dir and add markdown files. Once the files are added, run <root_dir>/.gen-toc to generate the table of contents automatically"
+doc_name=$dest_dir/sample.md
+touch $doc_name
+echo "---" >> $doc_name
+echo "title: Sample Page" >> $doc_name
+echo "authors:" >> $doc_name
+echo "- canvas" >> $doc_name
+echo "tags:" >> $doc_name
+echo "- readme" >> $doc_name
+echo "category: $topic_dir" >> $doc_name
+echo "description: A sample page for demonstration" >> $doc_name
+echo "---" >> $doc_name
+echo "This page is a sample on how to create a document or post under a certain category" >> $doc_name
 
 cd $start_dir
