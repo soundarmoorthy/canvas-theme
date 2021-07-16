@@ -14,7 +14,13 @@ echo "  url: docs" >> $toc_file
 echo "  links:" >> $toc_file
 echo "    - title: "About"" >> $toc_file
 echo "      url: "index"" >> $toc_file
+
 cd $root_dir/_docs
+if [ -z "$(ls -A)" ]; then
+  echo "    - title: Privacy Policy" >> $toc_file
+  echo "      url: privacy" >> $toc_file
+  exit 0
+fi
 for i in $(ls -d *) 
 do
   cat_title=$(grep "title:" $i/index.md | awk -F: '{print $2}')

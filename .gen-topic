@@ -32,7 +32,7 @@ file_name=$dest_dir/index.md
 touch $file_name
 echo "---"                 >> $file_name
 echo "title: $topic_name"  >> $file_name
-echo "section: $topic_dir" >> $file_name
+echo "section: index" >> $file_name
 echo "---"                 >> $file_name
 echo "{% include index_page.html %}" >> $file_name
 
