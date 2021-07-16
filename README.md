@@ -42,6 +42,12 @@ All documents should go inside one of the folders in the _docs folder. Each fold
 * Refer to kramdown / markdown syntax. 
 * When referring to images or other assets within repository use the following URL syntax `![]({{ '/<relative_path_from_root_dir>' | relative_path }})`. Using this syntax will make sure the images are loaded properly in any hosting environment.
 
+### Updating the logo 
+* Replace the file <rootdir>/assets/images/logo.jpeg with your own image and use the same name.
+
+### Use a different font
+* As of now the fonts Inconsolata is used for monospace and `Raleway` is used for regular text.
+
 ## Advanced
 
 You an also setup documentation locally and use it. There are lot of advantages in doing so. You can validate before pushing it to public. To run the documentation locally and view it, here are the following steps.
