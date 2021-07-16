@@ -1,0 +1,41 @@
+#!/bin/bash
+start_dir=$(pwd)
+cd $(dirname $0)
+root_dir=$(pwd)
+
+read -p 'Enter the dir name for new topic (without spaces):' topic_dir
+if [ -z $topic_dir ]; then
+    echo "directory name for topic cannot be empty"
+    exit -1
+fi
+if [[ $string = *" "* ]]; then
+    echo "directory name cannot contain spaces" 
+    exit -2
+fi
+
+dest_dir=$root_dir/_docs/$topic_dir
+if [[ -d "$dest_dir" ]]
+then
+    echo "Topic $topic_dir already exists. Please choose a different topic"
+    exit -1;
+fi
+
+read -p 'Enter the name of the topic :' topic_name
+
+if [ -z $topic_name ]; then
+    echo "Topic name cannot be empty"
+    exit -3;
+fi
+
+mkdir $dest_dir
+file_name=$dest_dir/index.md
+touch $file_name
+echo "---"                 >> $file_name
+echo "title: $topic_name"  >> $file_name
+echo "section: $topic_dir" >> $file_name
+echo "---"                 >> $file_name
+echo "{% include index_page.html %}" >> $file_name
+
+echo "Topic created succesfully. To add content under the topic go to the folder $dest_dir and add markdown files. Once the files are added, run <root_dir>/.gen-toc to generate the table of contents automatically"
+
+cd $start_dir

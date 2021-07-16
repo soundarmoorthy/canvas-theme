@@ -1,0 +1,7 @@
+<a href="{{ site.repo }}/edit/{% if site.github_branch %}{{ site.github_branch }}{% else %}master{% endif %}/{{ page.path }}" target="_blank">Edit this page</a>
+
+<a href="{{ site.repo }}" title="Go to repository">
+Github repository
+</a>
+<a href="{{ site.repo }}/issues/new?labels={% if page.editable %}{{ page.editable }}{% else %}question{% endif %}&title=Question:&body=Question on: {{ site.repo }}/tree/master/{{ page.path }}" target="_blank">Create documentation issue</a>
+

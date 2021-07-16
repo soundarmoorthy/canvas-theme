@@ -1,0 +1,16 @@
+<p>
+{{ page.desc }}
+</p>
+
+<div class="section-index">
+    <hr class="panel-line">
+    {% for post in site.docs  %}        
+    {% if post.category == page.section %}
+    <div class="entry">
+    <h5><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }} </a></h5>
+    <small><i style="color:grey">{{ post.authors | array_to_sentence_string}}</i></small>
+    <p>{{ post.description }} </p>
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
