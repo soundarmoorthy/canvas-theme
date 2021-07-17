@@ -4,7 +4,7 @@
 This is a jekyll theme that is useful if you want to write project documentation. This theme works well for hosting in github pages.
 
 ## Credits
-This theme is based on [Docsy Jekyll](https://github.com/vsoch/docsy-jekyll). Apart from the extended features provided here, this is completely based on their work. Consider this attribution.
+This theme is based on [Docsy Jekyll](https://github.com/vsoch/docsy-jekyll). Apart from the extended features provided here, this is completely based on their work. Consider this an attribution to their work and use these lines for any derivative work.
 
 ## Features
 * All features of [Docsy Jekyll](https://github.com/vsoch/docsy-jekyll). 
