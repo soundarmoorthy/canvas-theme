@@ -13,6 +13,7 @@ This theme is based on [Docsy Jekyll](https://github.com/vsoch/docsy-jekyll). Ap
 * Support for authors for pages
 * Privacy policy page
 * Use fonts from google CDN, and support for changing them easily.
+* Copyright year is set automatically based on the date.
 
 ## How To 
 
